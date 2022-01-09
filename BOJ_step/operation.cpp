@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(void) {
+    int a, b, c;
     // 05. 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
-    int a, b;
     cin >> a >> b;
     cout << a+b;
 
@@ -25,11 +25,18 @@ int main(void) {
     cout << a+b << endl << a-b << endl << a*b << endl << a/b << endl << a%b;
 
     // 10. 첫째 줄에 (A+B)%C, 둘째 줄에 ((A%C) + (B%C))%C, 셋째 줄에 (A×B)%C, 넷째 줄에 ((A%C) × (B%C))%C를 출력한다.
-    int c;
     cin >> a >> b >> c;
     cout << (a+b)%c << endl << ((a%c) + (b%c))%c << endl << (a*b)%c << endl << ((a%c) * (b%c))%c; 
     
     // 11. 세자리수 곱셈
+    cin >> a >> b;
+
+    int units = (b % 10)*a;
+    int tens = ((b%100)/10) * a;
+    int hundreds = (b / 100) * a;
+
+    cout << units << endl << tens << endl << hundreds;
+    cout << endl << units + tens*10 + hundreds*100;
 
     return 0;
 }
