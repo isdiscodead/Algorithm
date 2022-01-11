@@ -10,11 +10,10 @@ def solution(lottos, win_nums):
             wrong += 1
 
     min_prize = wrong + 1 + unk if unk < 6 else 6
-    max_prize = wrong + 1 
+    max_prize = wrong + 1
 
     if wrong == 6:
-        max_prize = 6
-        min_prize = 6
+        max_prize = min_prize = 6
 
     return [max_prize , min_prize]
 
