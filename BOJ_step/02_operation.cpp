@@ -30,11 +30,9 @@ int main(void) {
     
     // 11. 세자리수 곱셈
     cin >> a >> b;
-
     int units = (b % 10)*a;
     int tens = ((b%100)/10) * a;
     int hundreds = (b / 100) * a;
-
     cout << units << endl << tens << endl << hundreds;
     cout << endl << units + tens*10 + hundreds*100;
 
