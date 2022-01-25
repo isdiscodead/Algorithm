@@ -40,6 +40,17 @@ int main(void) {
         cout << a + b << "\n";
     }
 
-    // 05. 
+    // 05. N 찍기
+    cin >> n;
+    for ( int i=1 ; i <= n ; i++ ) {
+        cout << i << "\n";
+    }
+
+    // 06. 기찍 N
+    cin >> n;
+    for ( n ; n>0 ; n-- ) {
+        cout << n << "\n";
+    }
+    
     return 0;
 }
