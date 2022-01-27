@@ -52,5 +52,27 @@ int main(void) {
         cout << n << "\n";
     }
     
+    // 07. 각 테스트 케이스마다 "Case #x: "를 출력한 다음, A+B를 출력한다. 
+    cin >> num;
+    for ( int i = 1 ; i <= num ; i++ ) {
+        cin >> a >> b;
+        cout << "Case #" << i << ": " << a + b << endl;
+    }
+
+    // 08. 각 테스트 케이스마다 "Case #x: A + B = C" 형식으로 출력한다.
+    cin >> num;
+    for ( int i = 1 ; i <= num ; i++ ) {
+        cin >> a >> b;
+        cout << "Case #" << i << ": " << a << " + " << b << " = " << a + b << endl;
+    }
+
+    // 09. 첫째 줄부터 N번째 줄까지 차례대로 별을 출력한다.
+    cin >> num;
+    for ( int i=0 ; i<num ; i++ ) {
+        for ( int j=0 ; j<=i ; j++ ) {
+            cout << "*";
+        cout << "\n";
+    }
+
     return 0;
 }
