@@ -86,5 +86,19 @@ int main(void) {
         cout << "\n";
     }
 
+    // 11. 정수 N개로 이루어진 수열 A와 정수 X가 주어진다. A에서 X보다 작은 수를 모두 출력
+    int x;
+    int* a;
+    cin >> n >> x;
+    a = new int[n];
+    for ( int i=0 ; i<n ; i++ ) {
+        cin >> a[i];
+    }
+    for ( int i=0 ; i<n ; i++ ) {
+        if ( a[i] < x ) {
+            cout << a[i] << " ";
+        }
+    }
+
     return 0;
-}f
+}
