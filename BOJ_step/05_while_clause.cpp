@@ -12,5 +12,7 @@ int main(void) {
         cout << a+b << "\n";
     }
     
+    // 02. 
+    
     return 0;
 }
