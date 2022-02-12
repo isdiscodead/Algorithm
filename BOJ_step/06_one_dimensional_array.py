@@ -15,3 +15,16 @@ for num in arr :
     max = num
 
 print(min, max)
+
+
+# 2562
+num_arr = []
+for i in range(9) :
+  num_arr.append(input())
+  
+max_idx = 0
+for i in range(len(num_arr)) :
+  if num_arr[i] > num_arr[max_idx] :
+    max_idx = i;
+print(num_arr[max_idx])
+print(max_idx+1)
