@@ -36,4 +36,12 @@ a = int(input())
 b = int(input())
 c = int(input())
 num = a*b*c
-num_list = []
+num_list = [0 for i in range(10)]
+
+while num :
+  num_list[num%10] += 1  # 나머지(1의자리) 개수 세기
+  num = num // 10
+  
+for cnt in num_list :
+  print(cnt)
+  
