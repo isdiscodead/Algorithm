@@ -20,7 +20,7 @@ print(min, max)
 # 2562
 num_arr = []
 for i in range(9) :
-  num_arr.append(input())
+  num_arr.append(int(input()))
   
 max_idx = 0
 for i in range(len(num_arr)) :
@@ -28,3 +28,12 @@ for i in range(len(num_arr)) :
     max_idx = i;
 print(num_arr[max_idx])
 print(max_idx+1)
+
+
+# 2577
+# 근데 이거 ... 파이썬이면 그냥 함수 돌리면 되는 거 아닌가 ... 하 ...
+a = int(input())
+b = int(input())
+c = int(input())
+num = a*b*c
+num_list = []
