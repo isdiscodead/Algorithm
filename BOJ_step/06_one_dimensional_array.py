@@ -45,3 +45,16 @@ while num :
 for cnt in num_list :
   print(cnt)
   
+
+# 2577 - 2
+a = int(input())
+b = int(input())
+c = int(input())
+num = a*b*c
+num_list = [str(num).count(str(i)) for i in range(10)]
+print(num_list)
+for cnt in num_list :
+  print(cnt)
+  
+
+# 
