@@ -55,6 +55,3 @@ num_list = [str(num).count(str(i)) for i in range(10)]
 print(num_list)
 for cnt in num_list :
   print(cnt)
-  
-
-# 3052
