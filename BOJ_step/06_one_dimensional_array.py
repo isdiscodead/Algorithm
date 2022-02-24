@@ -56,6 +56,7 @@ print(num_list)
 for cnt in num_list :
   print(cnt)
 
+
 # 3052
 arr = []
 cnt = 0
@@ -71,3 +72,6 @@ for i in range(42) :
         cnt += 1
 
 print(cnt) 
+
+
+# 1546 평균
