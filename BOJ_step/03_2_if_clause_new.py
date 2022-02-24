@@ -11,3 +11,6 @@ else :
     minute += time
 
 print(hour, minute)
+
+
+# 2480 주사위 세개
