@@ -75,3 +75,14 @@ print(cnt)
 
 
 # 1546 평균
+cnt = int(input())
+score = list()
+max_idx = 0
+
+for i in range(cnt):
+  score.append(int(input()))
+  if score[max_idx] < score[i] :
+    max_idx = i
+
+for i in range(cnt) :
+  score[i] = score[i]/score[max_idx]*100
