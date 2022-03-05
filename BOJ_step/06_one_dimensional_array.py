@@ -76,13 +76,17 @@ print(cnt)
 
 # 1546 평균
 cnt = int(input())
-score = list()
-max_idx = 0
+sum = 0
 
-for i in range(cnt):
-  score.append(int(input()))
-  if score[max_idx] < score[i] :
-    max_idx = i
+score = list(map(int, input().split()))
+
+max_value = max(score)
 
 for i in range(cnt) :
-  score[i] = score[i]/score[max_idx]*100
+  score[i] = score[i]/max_value*100
+  sum += score[i]
+
+print(sum/cnt)
+
+
+# 8958 ox 퀴즈
