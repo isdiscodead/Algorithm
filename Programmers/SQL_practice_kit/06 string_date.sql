@@ -1,0 +1,32 @@
+-- 01. 루시와 엘라 찾기
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS 
+WHERE NAME = "Lucy" OR 
+NAME = "Ella" OR 
+NAME = "Pickle" OR 
+NAME = "Rogan" OR 
+NAME = "Sabrina" OR
+NAME = "Mitty"
+ORDER BY ANIMAL_ID;
+
+
+-- 02. 이름에 el이 들어가는 동물 찾기
+SELECT ANIMAL_ID, NAME FROM ANIMAL_INS
+WHERE NAME LIKE "%el%" AND ANIMAL_TYPE = "Dog"
+ORDER BY NAME;
+
+
+-- 03. 중성화 여부 파악하기
+-- case when 사용
+SELECT ANIMAL_ID, NAME, 
+CASE WHEN (SEX_UPON_INTAKE LIKE "Intact %") THEN "X" ELSE "O" END AS '중성화'
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+-- if 사용
+SELECT ANIMAL_ID, NAME,
+IF(SEX_UPON_INTAKE LIKE '%INTACT%', 'X', 'O') AS `중성화`
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC;
+
+
+-- 04. 오랜 기간 보호한 동물(2)
