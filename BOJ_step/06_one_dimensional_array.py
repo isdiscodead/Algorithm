@@ -90,3 +90,42 @@ print(sum/cnt)
 
 
 # 8958 ox 퀴즈
+size = int(input())
+arr = []
+
+for i in range(size):
+  test = input()
+  score = 0
+  cnt = 0
+  for i in range(len(test)):
+    flag = False
+    if test[i] == 'O':
+      cnt += 1
+      flag = True
+      if flag :
+        score += cnt
+      else :
+        score += 1
+        
+    else :
+      flag = False
+      cnt = 0
+      
+  arr.append(score)
+
+for i in arr:
+  print(i)
+
+# 수식 이용
+import sys
+
+def combo_score(x):
+    return int(x * (x+1) / 2)
+
+for i in range(int(sys.stdin.readline())):
+    o_count = list(sys.stdin.readline().rstrip().split('X'))
+    score = 0
+    for element in o_count:
+        score += combo_score(len(element))
+    combo = 0
+    print(score)
