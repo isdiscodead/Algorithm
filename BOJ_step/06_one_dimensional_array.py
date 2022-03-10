@@ -129,3 +129,6 @@ for i in range(int(sys.stdin.readline())):
         score += combo_score(len(element))
     combo = 0
     print(score)
+
+
+# 4344 평균은 넘겠지
