@@ -117,6 +117,7 @@ for i in arr:
   print(i)
 
 # 수식 이용
+from statistics import mean
 import sys
 
 def combo_score(x):
@@ -132,3 +133,21 @@ for i in range(int(sys.stdin.readline())):
 
 
 # 4344 평균은 넘겠지
+cnt = int(input())
+
+for i in range(cnt):
+  input_arr = list(map(int, input().split()))
+  size = int(input_arr[0])
+
+  mean_score = 0
+  student = 0
+  for j in range(1, size+1):
+    mean_score += int(input_arr[j])
+
+  mean_score = mean_score / size
+  
+  for j in range(1, size+1) :
+    if input_arr[j] > mean_score :
+      student += 1
+
+  print("%.3f%%" % (student / size * 100))
