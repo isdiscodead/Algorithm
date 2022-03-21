@@ -39,3 +39,28 @@ for remove_num in set(remove_list) :  # set 으로 중복값 제거 후 numbers 
 
 for self_num in numbers :  # 생성자가 있는 숫자를 삭제한 수열 결과 리스트
     print(self_num)
+
+
+
+# 1065 한수
+n = int(input())
+cnt = 0
+
+for i in range(1, n+1):    
+  if ( len(str(i)) > 1 ) :
+    d1 = int(str(i)[0]) - int(str(i)[1])
+  else :
+    cnt += 1
+    continue
+
+  flag = True
+  for j in range(len(str(i))-1):
+    d2 = int(str(i)[j]) - int(str(i)[j+1])
+    if ( d1 != d2 ):
+      flag = False
+    d1 = int(str(i)[j]) - int(str(i)[j+1])
+
+  if flag :
+    cnt +=1 
+    
+print(cnt)
