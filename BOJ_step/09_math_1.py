@@ -28,3 +28,6 @@ while ( n > 0 ) :
     time += 1
 
 print(time)
+
+
+# 1193 분수 찾기 
