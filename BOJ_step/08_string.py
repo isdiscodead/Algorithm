@@ -20,7 +20,10 @@ sentence = input()
 found = 0
 alpha = ord('a')
 
-while ( alpha < ord('z') ) :
+while ( alpha <= ord('z') ) :
     found = sentence.find( chr(alpha) )
     alpha += 1;
     print(found, end=" ")
+
+
+# 2675 문자열 반복
