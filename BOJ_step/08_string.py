@@ -27,3 +27,11 @@ while ( alpha <= ord('z') ) :
 
 
 # 2675 문자열 반복
+n = int(input())
+for i in range(n):
+    user = input().split()
+    time = int(user[0])
+    sentence = user[1]
+    for i in sentence:
+        print(i*time, end="")
+    print()
