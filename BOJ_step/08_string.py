@@ -35,3 +35,23 @@ for i in range(n):
     for i in sentence:
         print(i*time, end="")
     print()
+
+
+# 1157 단어 공부
+word = input().lower()
+alpha = ord('a')
+max_alpha = alpha
+flag = False
+    
+for i in range( 26 ):
+    if ( word.count( chr(alpha) ) > word.count( chr(max_alpha) )  ):
+        max_alpha = alpha
+        flag = False
+    elif ( word.count( chr(alpha) ) == word.count( chr(max_alpha) )  ):
+        flag = True
+    alpha += 1
+    
+if flag :
+    print("?")
+else :
+    print( chr(max_alpha).upper() )
