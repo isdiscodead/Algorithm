@@ -50,8 +50,8 @@ for i in range( 26 ):
     elif ( word.count( chr(alpha) ) == word.count( chr(max_alpha) )  ):
         flag = True
     alpha += 1
-    
+
 if flag :
     print("?")
 else :
-    print( chr(max_alpha).upper() )
+    print( chr(max_alpha).upper() ) # d왜틀리지 
