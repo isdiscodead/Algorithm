@@ -55,3 +55,7 @@ if flag :
     print("?")
 else :
     print( chr(max_alpha).upper() ) # d왜틀리지 
+
+
+# 1152 단어의 개수
+print( len(input().split()) )
