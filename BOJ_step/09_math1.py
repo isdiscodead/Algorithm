@@ -1,13 +1,18 @@
 # 1712 
 a, b, c = tuple(input().split())
-num = 0
+a = int(a)
+b = int(b)
+c = int(c)
 
-try: 
-    while True:
-        if ( a + b*num < c*num ) :
-            break;
-        num += 1
-except:
-    num = -1
+# C*N = A + B*N
+# C*N - B*N = A
+# N = A / (C - B)
 
-print(num)
+# 가변 비용이 노트북 가격보다 같거나 크면 손익 분기점 존재 X 
+if b >= c :
+    print(-1)
+else :
+    print( a // (c - b) + 1 )
+
+
+# 2292 벌집 
