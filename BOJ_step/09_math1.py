@@ -13,6 +13,3 @@ if b >= c :
     print(-1)
 else :
     print( a // (c - b) + 1 )
-
-
-# 2292 벌집 
