@@ -1,4 +1,5 @@
 # 11654 아스키 코드
+from audioop import reverse
 from gettext import find
 
 
@@ -59,3 +60,10 @@ else :
 
 # 1152 단어의 개수
 print( len(input().split()) )
+
+
+# 2908 상수
+num1, num2 = tuple(input().split())
+num1 = num1[::-1] 
+num2 = num2[::-1]
+print( num1 if num1 > num2 else num2 )
