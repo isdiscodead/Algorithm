@@ -13,3 +13,18 @@ if b >= c :
     print(-1)
 else :
     print( a // (c - b) + 1 )
+
+
+
+#  2292 벌집 
+# 한 바퀴 돌 때다 추가 가능한 숫자 += 6 
+n = int(input())
+
+n -= 1 # 첫 번째 칸 제외 
+time = 1
+
+while ( n > 0 ) :
+    n -= time*6
+    time += 1
+
+print(time)
