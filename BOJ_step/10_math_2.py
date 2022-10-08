@@ -40,3 +40,25 @@ for i in range(n):
         count += 1
 
 print(count)
+
+
+# 2581 소수 
+low = int(input())
+high = int(input())
+
+minP = high
+flag = False
+sumP = 0
+
+for i in range(low, high+1):
+    if isPrime(i) :
+        if ( i < minP ) :
+            minP = i
+        flag = True
+        sumP += i 
+        
+if flag :
+    print(sumP)
+    print(minP)
+else :
+    print(-1)
