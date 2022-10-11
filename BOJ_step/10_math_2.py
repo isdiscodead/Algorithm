@@ -65,21 +65,8 @@ else :
 
 
 # 2839 설탕 배달 
+# https://www.acmicpc.net/board/view/96450
 n = int(input())
 cnt = 0
-
-while(True) :
-        if ( n < 0 ) :
-            cnt = -1
-            break
-        elif ( n == 0 ):
-            break
-        
-        if ( n >= 5 ) :
-            n -= 5
-            cnt += 1
-        else :
-            n -= 3
-            cnt += 1
 
 print(cnt)
