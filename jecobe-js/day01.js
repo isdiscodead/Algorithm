@@ -112,4 +112,42 @@ return n*12000 + k*2000;
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// 
+// 짝수의 합
+/*
+정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.
+*/
+
+// 생각하기 쉬운 풀이
+function solution(n) {
+    var result = 0;
+    for ( var i=1 ; i<=n ; i++ ) {
+        if ( i % 2 == 0 ) {
+            result += i;
+        }
+    }
+    return result;
+}
+
+// 빠른 풀이 1 : 반복 줄이기 
+function solution(n) {
+    var result = 0;
+    for ( var i=0 ; i<=n ; i+=2 ) {
+        result += i;
+    }
+    return result;
+}
+
+// 빠른 풀이 2 : 수열 사용
+function solution(n) {
+    var half = Math.floor(n/2);
+    return half*(half+1);
+}
+
+// 빠른 풀이 3 : method chaining 사용
+function solution(n) {
+return Array(n) // n개의 원소를 가지는 빈 배열 생성
+    .fill() // 인자가 없으므로 배열이 모두 undefined로 채워짐 
+    .map((_, i) => i + 1) // 각 요소를 i+1의 값으로 채움 ( _ = 값, i = index )
+    .filter((v) => v % 2 === 0) // 짝수 값 v만 필터링
+    .reduce((acc, cur) => acc + cur, 0); // 짝수 값의 누적 합을 계산, 0은 초기값
+}
