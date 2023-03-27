@@ -67,3 +67,28 @@ function solution(array, n) {
 }
 
 
+
+/*
+피자 나눠먹기
+머쓱이네 피자가게는 피자를 일곱 조각으로 잘라 줍니다. 
+피자를 나눠먹을 사람의 수 n이 주어질 때, 
+모든 사람이 피자를 한 조각 이상 먹기 위해 필요한 피자의 수를 return 하는 solution 함수를 완성해보세요.
+ */
+
+// 생각하기 쉬운 풀이
+function solution(n) {
+    return n % 7 === 0 ? n / 7 : parseInt(n / 7) + 1;
+}
+
+// 빠른 풀이 
+function solution(n) {
+    return Math.ceil(n / 7)
+}
+
+
+
+/*
+짝수 홀수 개수 
+정수가 담긴 리스트 num_list가 주어질 때, 
+num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+*/
