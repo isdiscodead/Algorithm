@@ -92,3 +92,36 @@ function solution(n) {
 정수가 담긴 리스트 num_list가 주어질 때, 
 num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
 */
+
+// 생각하기 쉬운 풀이 
+function solution(array, n) {
+    var even = 0;
+    var odd = 0;
+    for ( var i=0 ; i < array.length ; i++ ) {
+        if ( array[i] % 2 == 0 ) {
+            even++;
+        } else {
+            odd++;
+        }
+    }
+    return [even, odd];
+}
+
+// 빠른 풀이 1 
+function solution(num_list) {
+    var answer = [0,0];
+
+    for(let a of num_list){
+        answer[a%2] += 1
+    }
+
+    return answer;
+}
+
+// 빠른 풀이 2 
+function solution(num_list) {
+    return [
+      num_list.filter((num) => num % 2 === 0).length,
+      num_list.filter((num) => num % 2 === 1).length,
+    ];
+  }
