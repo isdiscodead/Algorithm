@@ -43,3 +43,34 @@ function solution(my_string) {
 function solution(my_string) {
     return [...my_string].reverse().join('');
 }
+
+
+
+/*
+특정 문자 제거하기
+문자열 my_string과 문자 letter이 매개변수로 주어집니다. 
+my_string에서 letter를 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
+*/
+
+// 기본 풀이
+function solution(my_string, letter) {
+    var answer = "";
+    
+    for ( var i=0 ; i < my_string.length ; i++ ) {
+        if ( my_string.charAt(i) !== letter ) {
+            answer += my_string.charAt(i);
+        }
+    }
+    
+    return answer;
+}
+
+// 빠른 풀이 replaceAll
+function solution(my_string, letter) {
+    return my_string.replaceAll(letter, "");
+}
+
+// 빠른 풀이 split 
+function solution(my_string, letter) {
+    return my_string.split(letter).join('')
+}
