@@ -74,3 +74,41 @@ function solution(my_string, letter) {
 function solution(my_string, letter) {
     return my_string.split(letter).join('')
 }
+
+
+
+/*
+배열의 유사도
+두 배열이 얼마나 유사한지 확인해보려고 합니다. 
+문자열 배열 s1과 s2가 주어질 때 같은 원소의 개수를 return하도록 solution 함수를 완성해주세요.
+ */
+
+// 시간 초과 가능한 오답 
+function solution(s1, s2) {
+    var answer = 0;
+    for (var i = 0; i < s1.length; i++){
+        for (var j = 0; j < s2.length; j++){
+            if(s1[i] === s2[j]) answer++;
+        }
+    }
+    return answer;
+}
+
+// 빠른 풀이
+function solution(s1, s2) {
+    var answer = 0;
+     
+     for ( var i=0 ; i < s1.length ; i++ ) {
+         if ( s2.find(element => element === s1[i] ) ) {
+             answer ++;
+         }
+     } 
+     
+     return answer;
+ }
+
+ // 빠른 풀이 2
+ function solution(s1, s2) {
+    const intersection = s1.filter((x) => s2.includes(x));
+    return intersection.length;
+}
