@@ -6,3 +6,15 @@ i! ≤ n
 */
 
 // 생각하기 쉬운 풀이
+function solution(n) {
+    var i = 1
+    var fact = 1
+    while ( true ) {
+        if ( fact > n ) {
+            return i-1;
+        } else {
+            i ++;
+            fact *= i;
+        }
+    }
+}
