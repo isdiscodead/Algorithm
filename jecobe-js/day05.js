@@ -78,3 +78,14 @@ function solution(array2, n) {
 
     return array[cal3];
 }
+
+// 빠른 풀이
+function solution(array, n) {
+    // sort()는 기본적으로 아스키코드 값으로 정렬하지만 매개변수로 들어오는 함수를 기준으로 정렬 가능
+    // 정렬 기준 : n과의 절댓값이 작은 것이 앞으로 ... 2차 기준은 작은 수가 앞으로
+    array.sort((a,b) => Math.abs(n - a) - Math.abs(n - b) || a - b);
+
+    return array[0];
+}
+
+
