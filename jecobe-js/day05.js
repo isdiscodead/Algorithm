@@ -117,3 +117,17 @@ function solution(my_str, n) {
 한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
 */
 
+// 생각하기 쉬운 풀이
+function solution(s) {
+    var answer = '';
+    
+    for ( var i=0 ; i<s.length ; i++ ) {
+        if (answer.includes(s[i])) {
+            
+        } else if ( s.split(s[i]).length-1 == 1 ) {
+            answer += s[i];
+        }
+     }
+    
+    return answer.split("").sort().join("");
+}
