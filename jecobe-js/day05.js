@@ -131,3 +131,10 @@ function solution(s) {
     
     return answer.split("").sort().join("");
 }
+
+// 빠른 풀이
+function solution(s) {
+    let res = [];
+    for (let c of s) if (s.indexOf(c) === s.lastIndexOf(c)) res.push(c);
+    return res.sort().join('');
+}
