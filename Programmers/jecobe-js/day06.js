@@ -32,3 +32,22 @@ function solution(emergency) {
 }
 
 
+
+/*
+영어가 싫어요
+영어가 싫은 머쓱이는 영어로 표기되어있는 숫자를 수로 바꾸려고 합니다. 
+문자열 numbers가 매개변수로 주어질 때, numbers를 정수로 바꿔 return 하도록 solution 함수를 완성해 주세요.
+*/
+
+function solution(numbers) {
+    // 경우의 수가 10개 뿐이므로 숫자 단어를 모두 배열에 넣음
+    const num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    
+    for(let i = 0; i < num.length; i++){
+        // split을 num[i] 기준으로 자르고 잘린곳을 i로 메꿔줌
+        numbers = numbers.split(num[i]).join(i)
+    }
+    
+  	// number로 형 변환하여 return 
+    return Number(numbers)
+}
