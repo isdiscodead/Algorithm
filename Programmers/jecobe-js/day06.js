@@ -45,9 +45,21 @@ function solution(numbers) {
     
     for(let i = 0; i < num.length; i++){
         // split을 num[i] 기준으로 자르고 잘린곳을 i로 메꿔줌
-        numbers = numbers.split(num[i]).join(i)
+        numbers = numbers.split(num[i]).join(i);
     }
     
   	// number로 형 변환하여 return 
-    return Number(numbers)
+    return Number(numbers);
 }
+
+// 빠른 풀이
+// reduce()는 배열의 각 요소를 순회하며 callback함수의 실행 값을 누적하여 하나의 결과값을 반환함
+// arr.reduce(callback [, initialValue])
+// reduce의 callback 함수는 순서대로 accumulator( 합계 ), item( 요소 ), index( 인덱스 ), array( 배열 )을 인자로 받음 
+// 초기값을 주어진 n으로 두고, 숫자 배열에 있는 숫자를 하나씩 가져와서 합계( 초기값부터 시작 )에서 replaceAll 해서 해당 인덱스(=숫자)로 대체 ... 
+var solution = n => Number(['zero','one','two','three','four','five','six','seven','eight','nine'].reduce((t,s,i)=>t.replaceAll(s,i), n))
+
+
+/*
+
+*/
