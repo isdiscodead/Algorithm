@@ -1,38 +1,53 @@
-function solution(bandage, health, attacks) {
-    let answer = health;
+function solution(friends, gifts) {
+
+    // TODO: 점수와 선물 개수는 별개임 !!! 로직 수정 필요
     
-    for ( let i=0 ; i < attacks.length ; i++ ) {
-
-        if (i!==0) {
-            const timeDiff = attacks[i][0] - attacks[i-1][0];
-            
-            // bandage[0]초 보다 작게 감았을 경우 bandage[1]*n
-            if ( attacks[i][0] - attacks[i-1][0] > 1 ) { // 1초 안으로 공격 시 붕대 감지 못함
-                if ( bandage[0] >= timeDiff ) {
-                    answer += bandage[1] * (timeDiff-1);
-                    
-                // bandage[0]초 이상 감았을 경우 bandage[1]*n + bandage[2]
-                } else {
-                    answer += bandage[1] * (timeDiff-1) + bandage[2];
-                    // 2t 이상 성공 시 추가 회복 
-                    if ( bandage[0]*2 <= timeDiff) {
-                        answer += Math.floor(timeDiff/bandage[0]-1) * bandage[2];
-                    }
-                }
-            }
-        }
-        
-        // 체력이 max 이상이 되었다면 최대 체력으로
-        if ( answer > health ) {
-            answer = health;
-        }
-        
-        answer -= attacks[i][1];
-
-        // 캐릭터의 체력이 0 이하가 되어 죽는다면 -1을 return
-        if ( answer <= 0 ) {
-            return -1;
+    var answer = 0;
+    
+    let score = {};
+    
+    for (let i=0 ; i<(friends.length - 1) ; i++) {
+        for (let j=friends.length-1 ; j>i ; j--) {
+            score[friends[i] + ' ' + friends[j]] = 0;
         }
     }
-    return answer;
+    
+    for (let i=0 ; i<gifts.length ; i++) {
+        let log = gifts[i].split(' ');
+
+        if (log[0] + ' ' + log[1] in score) {
+            score[log[0] + ' ' + log[1]] += 1;
+        } else if (log[1] + ' ' + log[0] in score) {
+            score[log[1] + ' ' + log[0]] -= 1;
+        }
+    }
+    
+    let friends_score = {};
+    
+    for (let i=0 ; i<friends.length ; i++) {
+        friends_score[friends[i]] = 0;
+    }
+    
+    
+    for (let i=0 ; i<Object.keys(score).length ; i++) {
+        const [sender, receiver] = Object.keys(score)[i].split(' ');
+        
+        friends_score[sender] += score[Object.keys(score)[i]];
+        friends_score[receiver] -= score[Object.keys(score)[i]];
+    }
+    
+    for (let i=0 ; i<Object.keys(score).length ; i++) {
+        const [sender, receiver] = Object.keys(score)[i].split(' ');
+        if (score[sender + ' ' + receiver] === 0 ) {
+            if ((friends_score[sender] > friends_score[receiver])) {
+                friends_score[sender] += 1;
+            } else if ((friends_score[sender] < friends_score[receiver])) {
+                friends_score[sender] += 1;
+            }
+        }
+    }
+    
+    answer = Math.max(...Object.values(friends_score)); // array로 바로 넣을 수 없음
+    
+    return answer; 
 }
